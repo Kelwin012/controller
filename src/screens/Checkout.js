@@ -12,7 +12,7 @@ const [url,setUrl]= useState(null)
 
 useEffect(() =>{
     async function sendServer(){
-        let response=await fetch("http://192.168.1.104:3000/check",{
+        let response=await fetch("https://controller.onrender.com/c",{
             method:'POST',
             headers: {
                 Accept: 'application/json',

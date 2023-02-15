@@ -3,20 +3,18 @@ const bodyParser=require('body-parser')
 const mercadopago=require('mercadopago')
 const cors=require('cors')
 const config=require('./config/index.json')
-const fastify=require('fastify')
+
 const app=express()
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
 mercadopago.configure({
-  
-    
-    access_token: config.token
+    access_token: "TEST-2495923629949156-021509-156a69952813ce4de10812dccc3afd15-1152473513"
 })
 
 //ROUTES
-app.post('/check',(req,res) => {
+app.post('/c',(req,res) => {
     let preference = {
 
         items: [{
@@ -34,8 +32,8 @@ app.post('/check',(req,res) => {
       },
       back_urls:{
         failure:"https://www.minecraft.net/pt-br",
-        pending:"https://www.leagueoflegends.com/pt-br/",
-        succes:"https://store.steampowered.com/app/268910/Cuphead/"
+        pending:"https://www.leagueoflegends.com/pt-br",
+        succes:"https://store.steampowered.com/app/268910/Cuphead"
       }
     
       }
